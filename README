@@ -7,3 +7,13 @@ The modification looks like this:
   The last (optional) argument is the error callback function
 
 You can specify a base url at {this,CouchDB}.server. Usually this is not supported when you use a browser, but it works (and is needed) for QML.
+
+
+
+Example:
+
+If your synchronous call looked like this:
+console.log( CouchDB.getVersion() );
+
+it looks like this in the asynchronous version:
+CouchDB.getVersion(console.log);
