@@ -1,0 +1,9 @@
+This is a modified version of the javascript file you usually get when you call http://localhost:5984/_utils/script/couch.js but this version works asynchronously!
+
+The modification looks like this:
+- You can specify a default error callback function at {this,CouchDB}.errorCallback
+- The first argument of any function is usually the callback function that is executed when the command succeeded
+  Then the ordinary arguments follow
+  The last (optional) argument is the error callback function
+
+You can specify a base url at {this,CouchDB}.server. Usually this is not supported when you use a browser, but it works (and is needed) for QML.
