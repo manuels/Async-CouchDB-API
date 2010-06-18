@@ -547,9 +547,9 @@ CouchDB.maybeThrowError = function(okCallback, errorCallback, caller) {
         var result = {error:"unknown", reason:req.responseText};
       }
       if (errorCallback)
-        return errorCallback(req);
+        return errorCallback.call(caller, req);
       else if (this.errorCallback)
-        return this.errorCallback(caller, req);
+        return this.errorCallback.call(caller, req);
     }
     else
       return okCallback.call(caller, req);
